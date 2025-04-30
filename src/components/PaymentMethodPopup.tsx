@@ -9,7 +9,6 @@ export default function PaymentMethodPopup() {
   const [selectedMethod, setSelectedMethod] = useState("bKash");
 
   useEffect(() => {
-    // Show popup when component mounts (website loads)
     setIsOpen(true);
   }, []);
 
