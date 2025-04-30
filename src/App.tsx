@@ -1,10 +1,11 @@
-import PaymentMethodPopup from "./components/PaymentMethodPopup";
+import Navbar from "./components/Navbar";
+// import PaymentMethodPopup from "./components/PaymentMethodPopup";
 
 export default function App(){
   return (
-    <div>
-      <h1>This is App Component</h1>
-      <PaymentMethodPopup />
+    <div className="w-full max-w-[1360px] mx-auto min-h-screen">
+      <Navbar />
+      {/* <PaymentMethodPopup /> */}
     </div>
   );
 };
