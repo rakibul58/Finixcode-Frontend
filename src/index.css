@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-jithbo-green: #63CFA0;
+  --color-pure-green: #34735F;
+  --color-light-yellow: #F4F5EF;
+  --color-terra-cotta: #DA6049;
+  --primary-blue: #0096ED;
+  --color-gray-blue: #4E566B;
+  --color-light-apricot: #FDE8CD;
+}
+
+*{
+  box-sizing: border-box;
+  font-family: 'Satoshi', sans-serif;
+}
