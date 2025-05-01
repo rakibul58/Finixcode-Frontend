@@ -1,20 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { X } from "lucide-react";
 import moneyImg from "../assets/tdesign_money-filled.png";
 import bKashImg from "../assets/arcticons_bkash.png";
 import CashLogo from "../assets/hugeicons_payment-02.png";
 
-export default function PaymentMethodPopup() {
-  const [isOpen, setIsOpen] = useState(false);
+interface PaymentPopupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function PaymentMethodPopup({
+  isOpen,
+  onClose,
+}: PaymentPopupProps) {
   const [selectedMethod, setSelectedMethod] = useState("bKash");
-
-  useEffect(() => {
-    setIsOpen(true);
-  }, []);
-
-  const handleClose = () => {
-    setIsOpen(false);
-  };
 
   if (!isOpen) return null;
 
@@ -25,7 +24,7 @@ export default function PaymentMethodPopup() {
     >
       <div className="relative w-full max-w-sm mx-4 rounded-3xl overflow-hidden bg-pure-green">
         <button
-          onClick={handleClose}
+          onClick={onClose}
           className="absolute top-4 right-4 cursor-pointer text-light-apricot font-bold"
         >
           <X size={20} />
@@ -44,7 +43,7 @@ export default function PaymentMethodPopup() {
             Choose Payment Method
           </h2>
 
-          <div className="space-y-4">
+          <div className="space-y-6">
             <label className="flex items-start cursor-pointer">
               <div className="relative flex items-center">
                 <input
@@ -55,9 +54,9 @@ export default function PaymentMethodPopup() {
                   onChange={() => setSelectedMethod("bKash")}
                   className="sr-only"
                 />
-                <div className="size-5 rounded-full flex items-center justify-center bg-white">
+                <div className="size-4 rounded-full flex items-center justify-center bg-white">
                   {selectedMethod === "bKash" && (
-                    <div className="size-4 rounded-full bg-jithbo-green"></div>
+                    <div className="size-3 rounded-full bg-jithbo-green"></div>
                   )}
                 </div>
               </div>
@@ -66,7 +65,7 @@ export default function PaymentMethodPopup() {
                   <span
                     className="text-white"
                     style={{
-                      lineHeight: "1",
+                      lineHeight: "0.9",
                       fontWeight: 500,
                       fontSize: "20px",
                     }}
@@ -101,9 +100,9 @@ export default function PaymentMethodPopup() {
                   onChange={() => setSelectedMethod("Cash")}
                   className="sr-only"
                 />
-                <div className="size-5 rounded-full flex items-center justify-center bg-white">
+                <div className="size-4 rounded-full flex items-center justify-center bg-white">
                   {selectedMethod === "Cash" && (
-                    <div className="size-4 rounded-full bg-jithbo-green"></div>
+                    <div className="size-3 rounded-full bg-jithbo-green"></div>
                   )}
                 </div>
               </div>
@@ -112,7 +111,7 @@ export default function PaymentMethodPopup() {
                   <span
                     className="text-white"
                     style={{
-                      lineHeight: "1",
+                      lineHeight: "0.9",
                       fontWeight: 500,
                       fontSize: "20px",
                     }}
@@ -141,7 +140,7 @@ export default function PaymentMethodPopup() {
           <div className="mt-8">
             <button
               className="w-full py-4 rounded-full text-center font-bold text-white cursor-pointer bg-[#2B2B2B] hover:bg-[#2b2b2b9b] transition duration-300"
-              onClick={handleClose}
+              onClick={onClose}
               style={{ fontSize: "18px", letterSpacing: "0" }}
             >
               Continue

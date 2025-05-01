@@ -1,3 +1,4 @@
+import EventDetails from "./components/EventDetails";
 import Navbar from "./components/Navbar";
 import PhotoGallery from "./components/PhotoGallary";
 // import PaymentMethodPopup from "./components/PaymentMethodPopup";
@@ -8,6 +9,7 @@ export default function App() {
       <Navbar />
       <div className="bg-light-yellow">
         <PhotoGallery />
+        <EventDetails />
       </div>
       {/* <PaymentMethodPopup /> */}
     </div>
