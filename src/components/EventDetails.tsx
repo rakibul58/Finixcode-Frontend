@@ -1,6 +1,7 @@
 import { useState, lazy } from "react";
 import { Heart, MoreVertical, Upload } from "lucide-react";
 import PlayersList from "./PlayerList";
+import ChatTab from "./ChatTab";
 const PaymentMethodPopup = lazy(() => import("./PaymentMethodPopup"));
 
 export default function EventDetails() {
@@ -135,11 +136,7 @@ export default function EventDetails() {
 
                 {activeTab === "Comments" && (
                   <div>
-                    <h2 className="text-xl font-bold mb-4">Comments</h2>
-                    <p className="text-gray-700">
-                      No comments yet. Be the first to comment!
-                    </p>
-                    {/* Comments would go here */}
+                    <ChatTab />
                   </div>
                 )}
               </div>
