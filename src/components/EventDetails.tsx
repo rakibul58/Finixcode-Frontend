@@ -2,6 +2,7 @@ import { useState, lazy } from "react";
 import { Heart, MoreVertical, Upload } from "lucide-react";
 import PlayersList from "./PlayerList";
 import ChatTab from "./ChatTab";
+import InfoTab from "./InfoTab";
 const PaymentMethodPopup = lazy(() => import("./PaymentMethodPopup"));
 
 export default function EventDetails() {
@@ -65,10 +66,10 @@ export default function EventDetails() {
           </div>
 
           <div className="mt-2">
-            <p className="font-normal text-[#4A4A4A] leading-[22px] text-2xl mb-1">
+            <p className="font-normal text-[#4A4A4A] leading-[22px] text-2xl mb-2">
               Bashundhara Sports Complex
             </p>
-            <p className="font-normal text-[#4A4A4A] leading-[22px] text-2xl">
+            <p className="font-normal text-[#4A4A4A] leading-[22px] text-2xl ">
               Mar 14 from 7:30 PM - 9:30 PM
             </p>
           </div>
@@ -96,35 +97,7 @@ export default function EventDetails() {
               <div className="py-6 lg:px-0 px-4">
                 {activeTab === "Info" && (
                   <div>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      <span className="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">
-                        Football
-                      </span>
-                      <span className="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">
-                        Relay
-                      </span>
-                      <span className="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">
-                        Female
-                      </span>
-                      <span className="bg-gray-100 text-gray-800 text-xs px-3 py-1 rounded-full">
-                        Age: Below 25
-                      </span>
-                      <span className="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">
-                        Beginner
-                      </span>
-                    </div>
-
-                    <h2 className="text-xl font-bold mb-3">About this event</h2>
-                    <p className="text-gray-700 mb-2">
-                      Learn about the capital's first beavers in 400 years from
-                      the Ealing Beaver project, make your own mushroom growing
-                      starter kit with urban agriculture experts, before joining
-                      Roma the Engineer to get into the nuts and bolts of
-                      tomorrow's high-rise buildings.
-                    </p>
-                    <button className="text-blue-500 font-medium">
-                      Read more
-                    </button>
+                    <InfoTab />
                   </div>
                 )}
 
