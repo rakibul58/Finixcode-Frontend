@@ -1,6 +1,6 @@
 import { useState, lazy } from "react";
-import { Heart, MoreVertical } from "lucide-react";
-import uploadImg from "../assets/upload.png";
+import { Heart, MoreVertical, Upload } from "lucide-react";
+import PlayersList from "./PlayerList";
 const PaymentMethodPopup = lazy(() => import("./PaymentMethodPopup"));
 
 export default function EventDetails() {
@@ -27,22 +27,22 @@ export default function EventDetails() {
   };
 
   return (
-    <div className="max-w-[1360px] w-full mx-auto md:px-4 pb-10">
-      <div className="flex justify-between items-start md:flex-row flex-col-reverse gap-6 md:gap-[60px]">
-        <div className="pb-0 w-full max-w-[900px] mx-auto md:mx-0">
+    <div className="max-w-[1360px] w-full mx-auto lg:px-4 pb-10">
+      <div className="flex justify-between items-start lg:flex-row flex-col-reverse gap-12 lg:gap-[60px]">
+        <div className="pb-0 w-full max-w-[900px] mx-auto lg:mx-0 lg:px-0 px-4">
           <div className="flex justify-between w-full items-start">
             <h1 className="text-5xl leading-[64px] tracking-normal text-night-black font-[900]">
               Road to the Football Finals
             </h1>
             <div className="flex space-x-2 mt-1">
               <button
-                className="size-[42px] rounded-full"
+                className="size-[42px] rounded-full bg-light-gray border border-light-gray-stroke transition-colors"
                 aria-label="Download"
               >
-                <img src={uploadImg} alt="Upload Image" />
+                <Upload className={`mx-auto my-auto text-[#4A4A4A]`} />
               </button>
               <button
-                className="size-[42px] rounded-full bg-light-gray border-2 border-light-gray-stroke transition-colors"
+                className="size-[42px] rounded-full bg-light-gray border border-light-gray-stroke transition-colors"
                 aria-label="Favorite"
                 onClick={toggleFavorite}
               >
@@ -55,7 +55,7 @@ export default function EventDetails() {
                 />
               </button>
               <button
-                className="p-2 rounded-full hover:bg-gray-100 transition-colors size-[42px]"
+                className="rounded-full hover:bg-gray-100 transition-colors size-[42px]"
                 aria-label="More options"
               >
                 <MoreVertical size={20} className="text-gray-600" />
@@ -72,14 +72,14 @@ export default function EventDetails() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row mt-8">
+          <div className="flex flex-col lg:flex-row mt-8">
             <div className="flex-grow">
               <div className="mt-4">
                 <div className="flex justify-around w-full text-center">
                   {tabs.map((tab) => (
                     <button
                       key={tab}
-                      className={`px-6 py-3 text-2xl font-medium w-full ${
+                      className={`px-6 py-3 text-2xl font-medium w-full cursor-pointer ${
                         activeTab === tab
                           ? "border-b-2 border-terra-cotta text-terra-cotta"
                           : "text-night-black hover:text-gray-700 border-b-2 border-light-gray-stroke"
@@ -92,8 +92,7 @@ export default function EventDetails() {
                 </div>
               </div>
 
-              {/* Tab content */}
-              <div className="p-6">
+              <div className="py-6 lg:px-0 px-4">
                 {activeTab === "Info" && (
                   <div>
                     <div className="flex flex-wrap gap-2 mb-6">
@@ -130,13 +129,7 @@ export default function EventDetails() {
 
                 {activeTab === "Player" && (
                   <div>
-                    <h2 className="text-xl font-bold mb-4">
-                      Player Information
-                    </h2>
-                    <p className="text-gray-700">
-                      Player registration and team details will appear here.
-                    </p>
-                    {/* Additional player information would go here */}
+                    <PlayersList />
                   </div>
                 )}
 
@@ -151,12 +144,10 @@ export default function EventDetails() {
                 )}
               </div>
             </div>
-
-            {/* Right sidebar with event details */}
           </div>
         </div>
 
-        <div className="w-full max-w-[400px] mx-auto md:mx-0 p-6 bg-white rounded-2xl">
+        <div className="w-full max-w-[400px] mx-auto lg:mx-0 p-6 bg-white rounded-2xl">
           <div className="mb-4 p-4 border border-light-gray-stroke rounded-2xl">
             <div className="flex justify-between items-center">
               <span className="text-terra-cotta font-medium text-[16px]">
@@ -173,7 +164,7 @@ export default function EventDetails() {
 
           <button
             onClick={openPaymentModal}
-            className="w-full py-3 rounded-full bg-jithbo-green text-night-black font-bold text-[18px] hover:shadow-md transition-shadow duration-200 ease-in-out"
+            className="w-full py-3 rounded-full bg-jithbo-green text-night-black font-bold text-[18px] hover:shadow-lg transition-shadow duration-200 ease-in-out cursor-pointer"
           >
             Join event
           </button>
