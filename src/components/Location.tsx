@@ -16,7 +16,7 @@ const Location = () => {
             </p>
           </div>
           <div>
-            <button className="border border-gray-400 rounded-full py-2 px-6 text-gray-700 hover:bg-gray-50 transition-colors">
+            <button className="border border-gray-blue font-medium text-lg leading-[100%] tracking-[0%] rounded-full py-[15px] px-4 text-gray-blue hover:bg-gray-50 transition-colors">
               Open maps
             </button>
           </div>

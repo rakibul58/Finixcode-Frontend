@@ -1,5 +1,6 @@
 import AboutEvent from "./AboutEvent";
 import GoodToKnow from "./GoodToKnow";
+import HostedBy from "./HostedBy";
 import Location from "./Location";
 import TagsDisplay from "./TagsDisplay";
 
@@ -10,6 +11,7 @@ export default function InfoTab(){
       <AboutEvent />
       <Location />
       <GoodToKnow />
+      <HostedBy />
     </div>
   );
 };
