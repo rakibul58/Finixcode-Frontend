@@ -2,7 +2,7 @@ import person from "../assets/Frame 1984079473.png";
 
 export default function HostedBy() {
   return (
-    <div className="min-h-[330px] my-auto flex flex-col items-start justify-center py-10 md:py-0">
+    <div className="min-h-[330px] my-auto flex flex-col items-start justify-center py-10 md:py-0 ">
       <div className="w-full mx-auto">
         <h2 className="text-[32px] leading-[28px] tracking-[0%] font-bold text-night-black mb-6">
           Hosted by
