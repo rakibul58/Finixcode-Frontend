@@ -9,7 +9,7 @@ const TagsDisplay = () => {
   ];
 
   return (
-    <div className="flex items-center border-b-2 border-light-gray-stroke h-[177px] my-auto">
+    <div className="flex items-center justify-between border-b-2 border-light-gray-stroke min-h-[177px] my-auto p-5 flex-col gap-5 md:flex-row">
       <div className="flex flex-wrap gap-3">
         {tags.map((tag, index) => (
           <div
@@ -21,7 +21,7 @@ const TagsDisplay = () => {
         ))}
       </div>
 
-      <div className="ml-auto flex items-center gap-2">
+      <div className="flex items-center gap-2">
         <img src={difficultyIcon} alt="Difficulty image" />
         <span className="text-[#4A4A4A] font-normal text-2xl">Beginner</span>
       </div>
