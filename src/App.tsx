@@ -1,7 +1,6 @@
 import EventDetails from "./components/EventDetails";
 import Navbar from "./components/Navbar";
 import PhotoGallery from "./components/PhotoGallary";
-// import PaymentMethodPopup from "./components/PaymentMethodPopup";
 
 export default function App() {
   return (
@@ -11,7 +10,6 @@ export default function App() {
         <PhotoGallery />
         <EventDetails />
       </div>
-      {/* <PaymentMethodPopup /> */}
     </div>
   );
 }

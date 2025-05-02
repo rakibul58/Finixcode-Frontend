@@ -1,4 +1,5 @@
 import AboutEvent from "./AboutEvent";
+import Location from "./Location";
 import TagsDisplay from "./TagsDisplay";
 
 export default function InfoTab(){
@@ -6,6 +7,7 @@ export default function InfoTab(){
     <div className="mx-auto w-full">
       <TagsDisplay />
       <AboutEvent />
+      <Location />
     </div>
   );
 };
